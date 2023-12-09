@@ -1,25 +1,21 @@
-import { useState } from 'react'
-import Sidebar from './Components/Sidebar'
-import './App.css'
-import TabSection from './Components/TabSection'
-import ProductList from './Components/ProductList'
+import React from 'react';
+import { Route, Routes, NavLink } from 'react-router-dom';
+import './App.css';
+
+import Home from './Components/Home/Home';
+import ProductList from './Components/ProductList'; // Import ProductList component
+import ProductDetails from './Components/ProductDetails'; // Import ProductDetailsPage component
 
 function App() {
- 
-
   return (
     <>
-    <div>
-    <div className="flex justify-end">
-      <Sidebar />
-      <TabSection />
-    </div>
-    
-    <ProductList />
-    </div>
-   
+<Routes>
+     <Route path='/' element={<Home />} />
+     <Route path='/products' element={<ProductList />} />
+     <Route path='/product/:productId' element={<ProductDetails />} />
+</Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

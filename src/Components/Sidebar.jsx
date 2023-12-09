@@ -1,5 +1,6 @@
 // Sidebar.js
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaFacebook, FaInstagramSquare, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Sidebar = () => {
@@ -17,11 +18,9 @@ const Sidebar = () => {
      
       <nav className="mb-8">
         <ul>
-          <li className="mb-2">
-            <a href="#" className="text-blue-500 hover:text-blue-700">
-              Home
-            </a>
-          </li>
+    
+        <li className="mb-2"><NavLink to="/" className="text-blue-500 hover:text-blue-700">Home</NavLink></li>
+        
           <li className="mb-2">
             <a href="#" className="text-blue-500 hover:text-blue-700">
               Pages
@@ -50,7 +49,7 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-      {/* Social Media Links */}
+     
       <div className='flex flex-col justify-center items-center m-4 '>
         <div className="flex space-x-2 items-center my-3">
           <a href="#" className="text-gray-600 hover:text-blue-500">
