@@ -1,0 +1,30 @@
+
+.success-page {
+    animation: fadeOutBackground 2s ease-out forwards;
+  }
+  
+  @keyframes fadeOutBackground {
+    from {
+      background-color: #6ee7b7; 
+    }
+    to {
+      background-color: transparent; 
+    }
+  }
+  
+  .success-image {
+    animation: slideInImage 1s ease-in-out;
+    max-width: 20%; 
+    height: auto; 
+    margin-top: 20px; 
+  }
+  
+  @keyframes slideInImage {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0); 
+    }
+  }
+  

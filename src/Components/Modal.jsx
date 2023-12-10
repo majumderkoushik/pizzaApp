@@ -5,6 +5,17 @@ import { useNavigate } from 'react-router-dom';
 const Modal = ({ show, handleClose, productDetails }) => {
   const navigate = useNavigate();
 
+  // Function to generate random nutrition values
+  const generateRandomNutrition = () => {
+    const randomValue = () => (Math.random() * 10 + 1).toFixed(2);
+    return {
+      calories: randomValue(),
+      protein: randomValue(),
+      fat: randomValue(),
+      carbohydrates: randomValue(),
+    };
+  };
+
   const modalStyle = {
     display: show ? 'flex' : 'none',
     position: 'fixed',
@@ -53,22 +64,32 @@ const Modal = ({ show, handleClose, productDetails }) => {
     flex: '1',
   };
 
+  const boldStyle = {
+    fontWeight: 'bold',
+  };
+
   const productNameStyle = {
     fontSize: '24px',
-    fontWeight: 'bold',
+    ...boldStyle,
     marginBottom: '10px',
   };
 
   const productPriceStyle = {
     fontSize: '20px',
-    fontWeight: 'bold',
+    ...boldStyle,
     marginBottom: '10px',
   };
 
   const productDescriptionStyle = {
     fontSize: '16px',
+    ...boldStyle,
     marginBottom: '20px',
-    fontWeight: 'bold',
+  };
+
+  const nutritionValueStyle = {
+    fontSize: '16px',
+    ...boldStyle,
+    marginBottom: '10px',
   };
 
   const addToCartButtonStyle = {
@@ -79,12 +100,14 @@ const Modal = ({ show, handleClose, productDetails }) => {
     borderRadius: '4px',
     cursor: 'pointer',
     alignSelf: 'flex-start',
+    marginTop: 'auto', // Align button to the bottom
   };
 
   const handleAddToCart = () => {
-    
     navigate('/cart');
   };
+
+  const randomNutritionValues = generateRandomNutrition();
 
   return (
     <div style={modalStyle} onClick={handleClose}>
@@ -93,12 +116,19 @@ const Modal = ({ show, handleClose, productDetails }) => {
           <FaTimes />
         </button>
         <div style={imageContainerStyle}>
-          <img src={productDetails?.img} alt={productDetails?.name} style={productImageStyle} />
+          <img src={productDetails?.linkImagen} alt={productDetails?.nombre} style={productImageStyle} />
         </div>
         <div style={detailsContainerStyle}>
-          <h2 style={productNameStyle}>{productDetails?.name}</h2>
-          <p style={productPriceStyle}>Price: {productDetails?.price*100}</p>
-          <p style={productDescriptionStyle}>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}</p>
+          <h2 style={productNameStyle}>{productDetails?.nombre}</h2>
+          <p style={productPriceStyle}>Price: ${parseFloat(productDetails?.precio).toFixed(2)}</p>
+          <p style={productDescriptionStyle}>
+            {'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}
+          </p>
+          <p style={nutritionValueStyle}>
+            Nutrition Values (per 100g):
+            <br />
+            Calories: {randomNutritionValues.calories} kcal, Protein: {randomNutritionValues.protein}g, Fat: {randomNutritionValues.fat}g, Carbohydrates: {randomNutritionValues.carbohydrates}g
+          </p>
           <button style={addToCartButtonStyle} onClick={handleAddToCart}>
             Add to Cart
           </button>
@@ -109,6 +139,9 @@ const Modal = ({ show, handleClose, productDetails }) => {
 };
 
 export default Modal;
+
+
+
 
 
 

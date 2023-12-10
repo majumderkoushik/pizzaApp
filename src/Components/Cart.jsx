@@ -1,6 +1,7 @@
 // Cart.js
 import React from 'react';
 import Sidebar from './Sidebar';
+import PizzaOrderForm from './PizzaOrderForm';
 
 const Cart = () => {
   const cartStyle = {
@@ -14,11 +15,10 @@ const Cart = () => {
 
   return (
     <>
-      <div style={cartStyle}>
-        <h2>Shopping Cart</h2>
-        <p>Koushikkk</p>
-      </div>
-      <Sidebar />
+      
+        <PizzaOrderForm />
+      
+    
     </>
   );
 };
