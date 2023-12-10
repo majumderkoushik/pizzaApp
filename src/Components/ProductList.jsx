@@ -48,13 +48,11 @@ const ProductList = () => {
     setShowModal(false);
   };
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  const handleAddToCart = () => {
+    // Implement your logic for adding to cart, such as updating state or navigating to a cart page
+    // For demonstration purposes, navigate to the cart page
+    navigate('/cart'); // Replace '/cart' with the actual path of your cart page
+  };
 
   return (
     <div className='flex justify-center p-20 mx-20 items-center w-full'>
@@ -73,7 +71,10 @@ const ProductList = () => {
               <p>Price: {product.precio}</p>
             </div>
             <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity'>
-              <button className='bg-blue-500 text-white px-4 py-2'>Add to Cart</button>
+              {/* Updated onClick handler for the "Add to Cart" button */}
+              <button onClick={handleAddToCart} className='bg-blue-500 text-white px-4 py-2'>
+                Add to Cart
+              </button>
               <button onClick={() => handleQuickView(product.id)} className='bg-green-500 text-white px-4 py-2'>
                 Quick View
               </button>
@@ -88,6 +89,7 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
 
 
 

@@ -1,14 +1,12 @@
 import'../App.css'
+// TabSection.js
 import React from 'react';
-
-import { FaCheck, FaMapMarkerAlt } from 'react-icons/fa';
-
-
+import { Link } from 'react-router-dom';
+import { FaCheck, FaMapMarkerAlt, FaShoppingCart } from 'react-icons/fa';
 
 const TabSection = () => {
   return (
     <div className="sidebar-container flex w-full justify-center">
-      
       <div className="absolute top-2 right-2">
         <img
           src="https://cdn1.vectorstock.com/i/1000x1000/44/90/premium-quality-round-logo-badge-with-wheat-sticks-vector-13824490.jpg" 
@@ -64,6 +62,11 @@ const TabSection = () => {
           className="w-80 h-auto rounded-full"
         />
       </div>
+
+      {/* Cart Icon */}
+      <Link to="/cart" className="absolute right-2 bottom-2">
+  <FaShoppingCart className="text-white text-3xl" />
+</Link>
     </div>
   );
 };
