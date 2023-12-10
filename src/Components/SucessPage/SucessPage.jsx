@@ -16,6 +16,10 @@ const SuccessPage = () => {
         alt="Pizza Delivery"
         className="success-image"
       />
+      <button className='px-6 py-2'>
+      <NavLink to="/" className="text-blue-500 hover:text-blue-700">Home</NavLink>
+      </button>
+      
     </div>
   );
 };
