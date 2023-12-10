@@ -12,7 +12,7 @@ const SuccessPage = () => {
         Thank you for choosing Pizzahub. Your order is on the way!
       </p>
       <img
-        src='src/Components/SucessPage/22.png'
+        src='https://tse2.mm.bing.net/th?id=OIP.x1dtrZOUYvmbeedh_XNIpQHaFt&pid=Api&P=0&h=180'
         alt="Pizza Delivery"
         className="success-image"
       />
