@@ -54,7 +54,7 @@ const Modal = ({ show, handleClose, productDetails }) => {
   };
 
   const productImageStyle = {
-    width: '100%',
+    width: '70%',
     height: 'auto',
     background: '#eee',
     borderRadius: '8px',
