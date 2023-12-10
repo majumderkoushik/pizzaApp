@@ -24,15 +24,10 @@ const PizzaOrderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Add your validation logic here
-    // For example, check if all required fields are filled
-
-    // Assuming the form is valid, proceed to submit
+    
     console.log('Form Data:', formData);
 
-    // Add your logic for handling the form data (e.g., sending it to a server)
-
-    // Redirect to success page upon successful submission
+   
     navigate('/success');
   };
 

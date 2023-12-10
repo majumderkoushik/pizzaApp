@@ -1,4 +1,4 @@
-// Navbar.jsx
+
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaShoppingCart, FaSearch } from 'react-icons/fa';

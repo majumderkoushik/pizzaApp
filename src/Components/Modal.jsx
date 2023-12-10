@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const Modal = ({ show, handleClose, productDetails }) => {
   const navigate = useNavigate();
 
-  // Function to generate random nutrition values
+ 
   const generateRandomNutrition = () => {
     const randomValue = () => (Math.random() * 10 + 1).toFixed(2);
     return {
@@ -100,7 +100,7 @@ const Modal = ({ show, handleClose, productDetails }) => {
     borderRadius: '4px',
     cursor: 'pointer',
     alignSelf: 'flex-start',
-    marginTop: 'auto', // Align button to the bottom
+    marginTop: 'auto', 
   };
 
   const handleAddToCart = () => {

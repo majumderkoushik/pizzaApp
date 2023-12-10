@@ -1,5 +1,5 @@
 import'../App.css'
-// TabSection.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaCheck, FaMapMarkerAlt, FaShoppingCart } from 'react-icons/fa';
@@ -57,13 +57,13 @@ const TabSection = () => {
 
       <div className="flex items-center justify-center">
         <img
-          href="https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.unsplash.com/photo-1613564834361-9436948817d1?q=80&w=1943&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="Delicious Pizza"
           className="w-80 h-auto rounded-full"
         />
       </div>
 
-      {/* Cart Icon */}
+     
       <Link to="/cart" className="absolute right-2 bottom-2">
   <FaShoppingCart className="text-white text-3xl" />
 </Link>
