@@ -29,9 +29,9 @@ PizzaHub is a web application that allows users to customize and order pizzas on
 
 - Customize your pizza with various ingredients.
 - Enjoy 24/7 free delivery to your doorstep.
-- Receive special gift coupons with your orders.
+
 - Subscribe to our newsletter for updates and promotions.
-- Check your delivery zone using the interactive map feature.
+
 
 ## Getting Started
 
