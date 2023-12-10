@@ -1,8 +1,11 @@
-// Modal.jsx
+
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Modal = ({ show, handleClose, productDetails }) => {
+  const navigate = useNavigate();
+
   const modalStyle = {
     display: show ? 'flex' : 'none',
     position: 'fixed',
@@ -25,7 +28,7 @@ const Modal = ({ show, handleClose, productDetails }) => {
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
     maxWidth: '800px',
     width: '100%',
-    position: 'relative', // Added to make positioning of close button absolute
+    position: 'relative',
   };
 
   const closeButtonStyle = {
@@ -76,7 +79,12 @@ const Modal = ({ show, handleClose, productDetails }) => {
     border: 'none',
     borderRadius: '4px',
     cursor: 'pointer',
-    alignSelf: 'flex-start', // Adjusted to align with the top of the details container
+    alignSelf: 'flex-start',
+  };
+
+  const handleAddToCart = () => {
+   
+    navigate('/cart');
   };
 
   return (
@@ -94,7 +102,9 @@ const Modal = ({ show, handleClose, productDetails }) => {
           <p style={productDescriptionStyle}>
             Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
           </p>
-          <button style={addToCartButtonStyle}>Add to Cart</button>
+          <button style={addToCartButtonStyle} onClick={handleAddToCart}>
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
@@ -102,6 +112,7 @@ const Modal = ({ show, handleClose, productDetails }) => {
 };
 
 export default Modal;
+
 
 
 
