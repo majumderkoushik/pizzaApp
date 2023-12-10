@@ -1,22 +1,27 @@
-// Sidebar.js
-import React from 'react';
+// Navbar.jsx
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaFacebook, FaInstagramSquare, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaShoppingCart, FaSearch } from 'react-icons/fa';
 
-const Sidebar = () => {
+const Navbar = ({ onSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = () => {
+    onSearch && onSearch(searchTerm);
+  };
+
   return (
-    <div className="bg-white p-2 h-screen fixed top-0 left-0  flex flex-col justify-between items-center">
-    
-      <div className="text-center mb-8">
+    <div className="bg-white p-2 w-full flex justify-between items-center">
+      <div className="text-center">
         <img
           src="https://image.similarpng.com/very-thumbnail/2020/12/Pizza-Hub-Logo-on-transparent-background-PNG.png"
           alt="Logo"
-          className=" h-20 mx-auto"
+          className="h-16"
         />
       </div>
 
-      <nav className="mb-8">
-        <ul>
+      <nav className="flex items-center">
+        <ul className="flex space-x-4">
           <li className="mb-2"><NavLink to="/" className="text-blue-500 hover:text-blue-700">Home</NavLink></li>
           <li className="mb-2">
             <a href="#" className="text-blue-500 hover:text-blue-700">
@@ -24,7 +29,6 @@ const Sidebar = () => {
             </a>
           </li>
           <li className="mb-2">
-           
             <NavLink to="/menu" className="text-blue-500 hover:text-blue-700">
               Menu
             </NavLink>
@@ -47,33 +51,27 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-      <div className='flex flex-col justify-center items-center m-4 '>
-        <div className="flex space-x-2 items-center my-3">
-          <a href="#" className="text-gray-600 hover:text-blue-500">
-            <FaFacebook />
-          </a>
-          <a href="#" className="text-gray-600 hover:text-purple-500">
-            <FaInstagramSquare />
-          </a>
-          <a href="#" className="text-gray-600 hover:text-blue-500">
-            <FaLinkedin />
-          </a>
-          <a href="#" className="text-gray-600 hover:text-blue-500">
-            <FaTwitter />
-          </a>
+      <div className="flex items-center space-x-2">
+        <NavLink to="/cart" className="text-gray-600 hover:text-blue-500">
+          <FaShoppingCart />
+        </NavLink>
+
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border border-gray-300 rounded-full py-1 px-3 focus:outline-none"
+          />
+          <span className="absolute right-3 top-2 cursor-pointer" onClick={handleSearch}>
+            <FaSearch />
+          </span>
         </div>
-        <a href="#" className="bg-red-500 text-white px-4 py-2 mb-2 rounded-full">
-          Order Online
-        </a>
       </div>
     </div>
   );
 };
 
-export default Sidebar;
-
-
-
-
-
+export default Navbar;
 

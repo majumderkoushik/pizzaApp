@@ -1,9 +1,11 @@
+// App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import ProductList from './Components/ProductList';
 import ProductDetails from './Components/ProductDetails';
-import Cart from './Components/Cart'; // Import the Cart component
+import Cart from './Components/Cart';
+import Menu from './Components/Menu/Menu';
 
 function App() {
   return (
@@ -12,10 +14,12 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/products' element={<ProductList />} />
         <Route path='/product/:productId' element={<ProductDetails />} />
-        <Route path='/cart' element={<Cart />} /> {/* Add this route for the Cart component */}
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/menu' element={<Menu />} />
       </Routes>
     </>
   );
 }
 
 export default App;
+

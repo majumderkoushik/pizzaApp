@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Modal from './Modal';
 
-const ProductList = () => {
+const ProductList = ({ searchFilter }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,23 +11,25 @@ const ProductList = () => {
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [productDetails, setProductDetails] = useState(null);
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     const fetchData = async () => {
       const options = {
         method: 'GET',
-        url: 'https://pizzaallapala.p.rapidapi.com/productos',
+        url: 'https://pizza-and-desserts.p.rapidapi.com/pizzas',
         headers: {
-          'X-RapidAPI-Key': 'e336e1308bmsh5846e21005d2038p11e03fjsn7beedc811928',
-          'X-RapidAPI-Host': 'pizzaallapala.p.rapidapi.com',
+          'X-RapidAPI-Key': '272c08ead0mshb4c2a52e10bc8fcp133381jsne46bdb03cf3e',
+          'X-RapidAPI-Host': 'pizza-and-desserts.p.rapidapi.com',
         },
       };
 
       try {
         const response = await axios.request(options);
         console.log('Fetched Product Data:', response.data);
-        setProducts(response.data.productos);
+        setProducts(response.data);
       } catch (error) {
+        console.error('Error fetching data:', error.message);
         setError(error.message);
       } finally {
         setLoading(false);
@@ -49,38 +51,39 @@ const ProductList = () => {
   };
 
   const handleAddToCart = () => {
-    // Implement your logic for adding to cart, such as updating state or navigating to a cart page
-    // For demonstration purposes, navigate to the cart page
-    navigate('/cart'); // Replace '/cart' with the actual path of your cart page
+    
+    navigate('/cart'); 
   };
 
   return (
-    <div className='flex justify-center p-20 mx-20 items-center w-full'>
-      <div className='grid grid-cols-4 gap-8 '>
-        {products.map((product) => (
-          <div key={product.id} className='relative group box items-center flex justify-center flex-col'>
-            <img
-              src={product.linkImagen}
-              alt={product.nombre}
-              style={{ width: 'full', height: '200px' }}
-              className='rounded-full'
-            />
-            <div className='flex items-center flex-col space-x-4 my-10'>
-              <p>{product.nombre}</p>
-              <p className='text-center'>{product.descripcion}</p>
-              <p>Price: {product.precio}</p>
+    <div className="flex justify-center p-20 mx-20 items-center w-full">
+      <div className="grid grid-cols-4 gap-8 ">
+        {products
+          .filter((product) =>
+            searchFilter ? product.name.toLowerCase().includes(searchFilter.toLowerCase()) : true
+          )
+          .map((product) => (
+            <div key={product.id} className="relative group box items-center flex justify-center flex-col">
+              <img
+                src={product.img}
+                alt={product.name}
+                style={{ width: 'full', height: '200px' }}
+              />
+              <div className="flex items-center flex-col space-x-4 my-10">
+                <p className='font-bold'>{product.name}</p>
+                <p className="text-center">{product.description}</p>
+                <p>Price: {product.price*50}</p>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <button onClick={handleAddToCart} className="bg-blue-500 text-white px-4 py-2">
+                  Add to Cart
+                </button>
+                <button onClick={() => handleQuickView(product.id)} className="bg-green-500 text-white px-4 py-2">
+                  Quick View
+                </button>
+              </div>
             </div>
-            <div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity'>
-              {/* Updated onClick handler for the "Add to Cart" button */}
-              <button onClick={handleAddToCart} className='bg-blue-500 text-white px-4 py-2'>
-                Add to Cart
-              </button>
-              <button onClick={() => handleQuickView(product.id)} className='bg-green-500 text-white px-4 py-2'>
-                Quick View
-              </button>
-            </div>
-          </div>
-        ))}
+          ))}
       </div>
 
       <Modal show={showModal} handleClose={handleCloseModal} productDetails={productDetails} />
@@ -89,6 +92,14 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+
+
+
+
+
+
+
 
 
 

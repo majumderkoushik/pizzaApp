@@ -44,7 +44,7 @@ const ProductDetails = () => {
       <h2>{productDetails.nombre}</h2>
       <p>Description: {productDetails.descripcion}</p>
       <p>Price: {productDetails.precio}</p>
-      {/* Render other product details as needed */}
+      
     </div>
   );
 };

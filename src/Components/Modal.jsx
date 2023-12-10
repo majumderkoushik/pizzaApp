@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -26,7 +25,7 @@ const Modal = ({ show, handleClose, productDetails }) => {
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
-    maxWidth: '800px',
+    maxWidth: '1200px',
     width: '100%',
     position: 'relative',
   };
@@ -83,7 +82,7 @@ const Modal = ({ show, handleClose, productDetails }) => {
   };
 
   const handleAddToCart = () => {
-   
+    
     navigate('/cart');
   };
 
@@ -94,14 +93,12 @@ const Modal = ({ show, handleClose, productDetails }) => {
           <FaTimes />
         </button>
         <div style={imageContainerStyle}>
-          <img src={productDetails?.linkImagen} alt={productDetails?.nombre} style={productImageStyle} />
+          <img src={productDetails?.img} alt={productDetails?.name} style={productImageStyle} />
         </div>
         <div style={detailsContainerStyle}>
-          <h2 style={productNameStyle}>{productDetails?.nombre}</h2>
-          <p style={productPriceStyle}>Price: {productDetails?.precio}</p>
-          <p style={productDescriptionStyle}>
-            Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-          </p>
+          <h2 style={productNameStyle}>{productDetails?.name}</h2>
+          <p style={productPriceStyle}>Price: {productDetails?.price*100}</p>
+          <p style={productDescriptionStyle}>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'}</p>
           <button style={addToCartButtonStyle} onClick={handleAddToCart}>
             Add to Cart
           </button>
