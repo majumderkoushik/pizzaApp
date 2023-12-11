@@ -44,9 +44,9 @@ To get started with PizzaHub, follow these steps:
 Install dependencies:
 
 
-cd pizzaHub
-npm install
-Run the application:
+-cd pizzaHub
+-npm install
+-Run the application:
 
 
 
