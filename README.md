@@ -44,14 +44,11 @@ To get started with PizzaHub, follow these steps:
 Install dependencies:
 
 
--cd pizzaHub
--npm install
--Run the application:
-
-
-
-npm run dev
-The application will be accessible at http://localhost:5173 in your web browser.
+- cd pizzaHub
+- npm install
+- Run the application:
+- npm run dev
+- The application will be accessible at http://localhost:5173 in your web browser.
 
 ## Usage
 Customize your pizza by choosing your favorite ingredients.
