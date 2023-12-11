@@ -55,10 +55,10 @@ Customize your pizza by choosing your favorite ingredients.
 Subscribe to the newsletter for the latest updates and promotions.
 Explore the delicious pizza images on the website.
 Click on the shopping cart icon to view and manage your cart.
-##Technologies Used
-React
-React Router
-Tailwind CSS
+## Technologies Used
+- React
+- React Router
+- Tailwind CSS
 
 ...
 ## Contributing
