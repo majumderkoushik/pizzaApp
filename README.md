@@ -44,7 +44,6 @@ To get started with PizzaHub, follow these steps:
 Install dependencies:
 
 
-Copy code
 cd pizzaHub
 npm install
 Run the application:
@@ -54,18 +53,18 @@ Run the application:
 npm run dev
 The application will be accessible at http://localhost:5173 in your web browser.
 
-Usage
+##Usage
 Customize your pizza by choosing your favorite ingredients.
 Subscribe to the newsletter for the latest updates and promotions.
 Explore the delicious pizza images on the website.
 Click on the shopping cart icon to view and manage your cart.
-Technologies Used
+##Technologies Used
 React
 React Router
 Tailwind CSS
 
 ...
-Contributing
+##Contributing
 If you'd like to contribute to PizzaHub, please follow these steps:
 
 Fork the repository.
@@ -73,7 +72,7 @@ Create a new branch for your feature: git checkout -b feature-name.
 Commit your changes: git commit -m 'Add a new feature'.
 Push to the branch: git push origin feature-name.
 Submit a pull request.
-License
+##License
 This project is licensed under the MIT License.
 
 
