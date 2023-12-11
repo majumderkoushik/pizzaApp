@@ -13,13 +13,13 @@ Welcome to PizzaHub, where you can customize and order your favorite pizzas!
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
+- #introduction
+- #features
+- #getting-started
+- #usage
+- #technologies-used
+- #contributing
+- #license
 
 ## Introduction
 
@@ -40,31 +40,30 @@ To get started with PizzaHub, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/pizzahub.git
+   git clone https://github.com/your-username/pizzaHub.git
 Install dependencies:
 
-bash
+
 Copy code
-cd pizzahub
+cd pizzaHub
 npm install
 Run the application:
 
-bash
-Copy code
-npm start
-The application will be accessible at http://localhost:3000 in your web browser.
+
+
+npm run dev
+The application will be accessible at http://localhost:5173 in your web browser.
 
 Usage
 Customize your pizza by choosing your favorite ingredients.
 Subscribe to the newsletter for the latest updates and promotions.
-Check your delivery zone using the map feature.
 Explore the delicious pizza images on the website.
 Click on the shopping cart icon to view and manage your cart.
 Technologies Used
 React
 React Router
 Tailwind CSS
-FontAwesome
+
 ...
 Contributing
 If you'd like to contribute to PizzaHub, please follow these steps:
@@ -77,7 +76,6 @@ Submit a pull request.
 License
 This project is licensed under the MIT License.
 
-vbnet
-Copy code
 
-Remember to replace placeholders like `your-username` and add or modify secti
+
+
